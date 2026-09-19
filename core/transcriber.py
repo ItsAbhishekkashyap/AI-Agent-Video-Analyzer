@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 SARVAM_PIECE_SECONDS = 25
 
 
-WHISPER_MODEL = os.getenv("WHISPER_MODEL", "small")
+WHISPER_MODEL = os.getenv("WHISPER_MODEL", "base")
 
 
 SARVAM_API_KEY = os.getenv("SARVAM_API_KEY")
