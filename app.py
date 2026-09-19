@@ -16,37 +16,60 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# Custom minimal styling to make it feel premium without breaking native components
 st.markdown("""
 <style>
+    /* Animated Gradient Title */
     .main-title {
-        font-size: 3rem;
-        font-weight: 800;
-        background: -webkit-linear-gradient(45deg, #FF4B2B, #FF416C);
+        font-size: 3.5rem;
+        font-weight: 900;
+        background: linear-gradient(45deg, #FF4B2B, #FF416C, #FF4B2B);
+        background-size: 200% auto;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        margin-bottom: 0rem;
+        animation: gradient 3s linear infinite;
+        margin-bottom: -10px;
     }
+    @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    
     .sub-title {
-        font-size: 1.2rem;
-        color: #666;
+        font-size: 1.1rem;
+        color: #A0AEC0;
         margin-bottom: 2rem;
+        font-weight: 500;
     }
+    
+    /* Elegant Tabs */
     .stTabs [data-baseweb="tab-list"] {
-        gap: 24px;
+        gap: 8px;
+        background-color: transparent;
     }
     .stTabs [data-baseweb="tab"] {
         height: 50px;
         white-space: pre-wrap;
-        background-color: transparent;
-        border-radius: 4px 4px 0px 0px;
-        gap: 1px;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        background-color: #1E1E1E;
+        border-radius: 8px 8px 0px 0px;
+        padding: 10px 24px;
+        border: 1px solid #333;
+        border-bottom: none;
+        color: #A0AEC0;
+        font-weight: 600;
+        transition: all 0.3s ease;
     }
     .stTabs [aria-selected="true"] {
-        background-color: rgba(255, 75, 43, 0.1);
-        border-bottom: 2px solid #FF4B2B;
+        background-color: #FF4B2B !important;
+        color: white !important;
+        border-color: #FF4B2B !important;
+    }
+    
+    /* Metrics & Info Boxes */
+    .stAlert {
+        border-radius: 12px;
+        border: none;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     }
 </style>
 """, unsafe_allow_html=True)
